@@ -120,10 +120,40 @@ $$A(r) = \frac{\mu_0}{4\pi}\int\frac{J}{\scripty{r}^2}d\tau' = \frac{\mu_0}{4\pi
 By using $B = \nabla \times A$, Ampere's law can also be applied on $A$,
 $$\oint A \cdot dl = \Phi = \int B\cdot da$$
 Typically, the direction of A mimics that of currents.\\
-Similar to V, \emph{A} must be continuous.
+\subsection{Boundary Conditions}
+\begin{align*}
+B_{above} - B_{below} &= \mu_0 ( \mathbf{K} \times \hat{n} )\\
+A_{above} - A_{below} &= 0 \text{\quad (continuous potential)}\\
+\frac{\partial A_{above}}{\partial n} - \frac{\partial A_{below}}{\partial n} &= - \mu_0 K
+\end{align*}
+
+\subsection{Multipole Expansion on Vector Potential}
+$$\frac{1}{\scripty{r}} = \frac{1}{\sqrt{r^2 + r'^2 - 2rr'cos\alpha}} = \frac{1}{r} \sum_{n=0}^{\infty} (\frac{r'}{r})^n P_n(cos\alpha)$$
+$$ A(r) = \frac{\mu_0 I}{4\pi}  \sum_{n=0}^{\infty} \frac{1}{r^{n+1}} \oint r'^n P_n(cos\alpha) dl'$$
+where the first magnetic monopole term always vanishes as $ \oint dl' = 0$.
+The dipole term is 
+\begin{align*}
+A_{dip}(r) &= \frac{\mu_0}{4\pi} \frac{\mathbf{m} \times \hat{r}}{r^2}\\
+B_{dip}(r) &= \frac{\mu_0}{4\pi} \frac{3(\mathbf{m} \cdot r) \hat{r} - \mathbf{m}}{r^3}
+\end{align*}
+where $\mathbf{m}$ is the magnetic moment
+$$ \mathbf{m} = I \int da = Ia $$
 
 \raggedcolumns\columnbreak
-a
+.
+\end{multicols}
+
+\pagebreak
+
+\begin{center}
+     \Large{\textbf{Chapter 6}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
 
 
 \end{multicols}
