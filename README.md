@@ -1,1 +1,1 @@
-Latex Notes of Courses ok
+This repository includes LaTeX notes for my undergraduate courses.
