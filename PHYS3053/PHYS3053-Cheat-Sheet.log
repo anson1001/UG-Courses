@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.30)  25 NOV 2025 15:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.30)  25 NOV 2025 21:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/anson/DevRepos/Undergraduate-Latex/PHYS3053/PHYS3053-Cheat-Sheet.tex
-(c:/Users/anson/DevRepos/Undergraduate-Latex/PHYS3053/PHYS3053-Cheat-Sheet.tex
+**c:/Users/anson/DevRepos/UG-Courses/PHYS3053/PHYS3053-Cheat-Sheet.tex
+(c:/Users/anson/DevRepos/UG-Courses/PHYS3053/PHYS3053-Cheat-Sheet.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
 (C:\Users\anson\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -431,26 +431,28 @@ LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
 
 [1
 
-{C:/Users/anson/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (PHYS3053-Cheat-Sheet.aux)
+{C:/Users/anson/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+[2] (PHYS3053-Cheat-Sheet.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
  ***********
 Package rerunfilecheck Info: File `PHYS3053-Cheat-Sheet.out' has not changed.
-(rerunfilecheck)             Checksum: F320849236BA62BF2D47903DEE031EAE;1310.
+(rerunfilecheck)             Checksum: F57F5DDCEA1F40D2EBFCA24E25377F9D;1725.
  ) 
 Here is how much of TeX's memory you used:
- 10357 strings out of 469923
- 159034 string characters out of 5469170
- 574939 words of memory out of 5000000
- 37046 multiletter control sequences out of 15000+600000
- 633742 words of font info for 64 fonts, out of 8000000 for 9000
+ 10368 strings out of 469923
+ 159062 string characters out of 5469170
+ 585943 words of memory out of 5000000
+ 37051 multiletter control sequences out of 15000+600000
+ 634672 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,610b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\anson\AppData\Local\MiKTeX\fonts/pk/ljfour/public/calligra/dpi704\callig15.pk><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on PHYS3053-Cheat-Sheet.pdf (1 page, 155038 bytes).
+ 75i,10n,79p,601b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\anson\AppData\Local\MiKTeX\fonts/pk/ljfour/public/calligra/dpi704\callig15.pk><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on PHYS3053-Cheat-Sheet.pdf (2 pages, 171955 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 17 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
