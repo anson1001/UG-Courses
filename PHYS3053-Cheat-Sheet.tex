@@ -1,0 +1,131 @@
+\documentclass[10pt,landscape]{article}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue]{hyperref}
+
+%new packages
+\usepackage{calligra}
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
+
+
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+\pagestyle{empty}
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+
+\title{PHYS3053}
+
+\begin{document}
+
+\raggedright
+\footnotesize
+
+\begin{center}
+     \Large{\textbf{Chapter 5}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\section{5.1 The Lorentz Force Law}
+Empirically, for a moving charge in a magnetic field, we have 
+$$F_{mag} = Q(v \times B)$$
+The generalized magnetic force is
+$$F_{mag} = \int I\times B dl = I \int dl \times B$$
+The magnetic force does \emph{NO} work.
+
+\subsection{Currents}
+Line Currents: $I = v\lambda$\\
+Surface Currents Density: $K = \sigma v$, $K = \frac{dI}{dl_\perp}$\\
+(for solenoids of n winds per length, $K=nI \vec{\phi}$)\\
+Volume Current Density: $J = \rho v,$ $J = \frac{dI}{da_\perp}$\\
+\subsection{Conservation of Charge}
+\begin{align*}
+    \int_{S(V)} J\cdot da &= \frac{d}{dt}\int_V \rho d\tau\\
+    \nabla \cdot J &= \frac{\partial \rho}{\partial t}
+\end{align*}
+
+\section{5.2 Biot-Savart Law}
+For $\frac{\partial J}{\partial t} = 0$, we have,
+$$B = \frac{\mu_0}{4 \pi} I \int \frac{dl' \times \hat{\scripty{r}}}{\scripty{r}^2} = \frac{\mu_0}{4\pi} \int \frac{J(r')\times B}{\scripty{r}^2}d\tau'$$\\
+Field of a straight wire: $B = \frac{\mu_0 I}{2\pi d}$\\
+Field of a circular wire: $B = \frac{\mu_0 I}{2} \frac{R^2}{(R^2+z^2)^{3/2}}$
+
+
+\section{5.3 The Divergence and Curl of B}
+\subsection{The Divergence}
+$$\nabla \cdot B = 0$$\\
+\subsection{The Curl: Ampere's Law}
+\begin{align*}
+    \nabla \times B &= \mu_0 \vec{J}\\
+    \oint B \cdot dl &= \mu_0 I_{enc}
+\end{align*}
+Ampere's law is particularly useful for
+\begin{enumerate}
+\begin{multicols}{2}
+    \item Infinite straight wires
+    \item Infinite planes
+    \columnbreak
+    \item Infinite solenoids
+    \item Toroids
+\end{multicols}
+\end{enumerate}
+Field of a solenoid: $B = \begin{cases}
+    \mu_0nI \hat{z} &\quad\text{inside}\\
+    0 &\quad\text{outside}
+\end{cases}$\\
+Field of a toroid: $B = \begin{cases}
+    0 &\quad\text{inside the coil}\\
+    \frac{\mu_0 N I}{2 \pi s} &\quad\text{outside the coil}
+\end{cases}$
+
+\raggedcolumns\columnbreak
+
+\section{5.4 Magnetic Vector Potential}
+$$B = \nabla \times A$$
+\begin{align*}
+    \nabla \times B = \nabla \times ( \nabla \times A) = \nabla (\nabla \cdot A) - \nabla^2A &= \mu_0 \vec{J}\\
+    \text{(3 Poisson's equations corres. x,y,z) \quad} \nabla^2 A &= \mu_0 \vec{J}
+\end{align*}
+$$A(r) = \frac{\mu_0}{4\pi}\int\frac{J}{\scripty{r}^2}d\tau' = \frac{\mu_0}{4\pi}\int\frac{K}{\scripty{r}^2}da' = \frac{\mu_0}{4\pi}\int\frac{I}{\scripty{r}^2}dl'$$
+By using $B = \nabla \times A$, Ampere's law can also be applied on $A$,
+$$\oint A \cdot dl = \Phi = \int B\cdot da$$
+Typically, the direction of A mimics that of currents.\\
+Similar to V, \emph{A} must be continuous.
+
+\raggedcolumns\columnbreak
+a
+
+
+\end{multicols}
+
+\end{document}
