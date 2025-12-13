@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.30)  7 DEC 2025 03:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.30)  13 DEC 2025 13:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -693,7 +693,7 @@ Package rerunfilecheck Info: File `PHYS3053-Cheat-Sheet.out' has not changed.
 Here is how much of TeX's memory you used:
  22081 strings out of 469923
  414286 string characters out of 5469170
- 804527 words of memory out of 5000000
+ 804528 words of memory out of 5000000
  48489 multiletter control sequences out of 15000+600000
  635165 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
