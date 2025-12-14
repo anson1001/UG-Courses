@@ -63,7 +63,7 @@
 
 \section{5.1 The Lorentz Force Law}
 Empirically, for a moving charge in a magnetic field, we have 
-$$F_{mag} = Q(v \times B)$$
+$$F_{mag} = q(v \times B)$$
 The generalized magnetic force is
 $$F_{mag} = \int I\times B dl = I \int dl \times B$$
 The magnetic force does \emph{NO} work.
@@ -204,9 +204,9 @@ $$B = \mu H = mu_0(1+\chi_m)H$$
 and
 $$J_b = \chi_m J_f$$\\
 \raggedcolumns\columnbreak
-b\\
+.\\
 \raggedcolumns\columnbreak
-c
+.
 \end{multicols}
 \pagebreak
 
@@ -310,7 +310,7 @@ using $\nabla \times B = \mu_0 J$ and product rule 6,
 $$W = \frac{1}{2\mu_0}\int_{\text{all space}}B^2$$
 such that $\frac{B^2}{2\mu_0}$ is the \textbf{energy per unit volume} of magnetic field.
 
-\section{7.3 Maxwell's equations}
+\section{7.3 Maxwell's Equations}
 By far, the curl and divergence of $E$ and $B$ fields have been established.
 \begin{align*}
     \nabla \cdot E &= \frac{\rho}{\epsilon_0} &\nabla \times E &= -\frac{dB}{dt}\\
@@ -318,5 +318,60 @@ By far, the curl and divergence of $E$ and $B$ fields have been established.
 \end{align*}
 There is one ammendment on Ampere's law due to its failure for non-steady currents. This is to be fixed by the "piling charge" term, such that Ampere's law writes
 $$ \nabla \times B = \mu_0 J + \mu_0 \epsilon_0 \frac{dE}{dt}$$
+\subsection{Maxwell's Equations in Matter}
+Because E is due to $\rho_f and \rho_b$, once there is a change in polarization, it appears to have a current of bound charges, such that
+$$ \mathbf{J} = \mathbf{J}_f + \mathbf{J}_b + \mathbf{J}_p = \mathbf{J}_f + \nabla \times \mathbf{M} + \frac{\partial \mathbf{P}}{\partial t}$$
+\end{multicols}
+
+\newpage
+\begin{center}
+     \Large{\textbf{Chapter 7}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+then Maxwell's equations will write
+\begin{align*}
+    \nabla \cdot \mathbf{D} &= \rho_f & \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\\
+    \nabla \cdot \mathbf{B} &= 0 & \nabla \times \mathbf{H} &= \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t}
+\end{align*}
+where
+\begin{align*}
+    \mathbf{D} &= \epsilon_0\mathbf{E} + \mathbf{P} & \mathbf{H} &= \frac{1}{\mu_0}\mathbf{B} - \mathbf{M}
+\end{align*}
+and in linear media
+\begin{align*}
+    \mathbf{P} &= \epsilon_0 \chi_e \mathbf{E} & \mathbf{M} &= \chi_m \mathbf{H}\\
+    \mathbf{D} &= \epsilon \mathbf{E} & \mathbf{H} &= \frac{1}{\mu} \mathbf{B}\\
+    \epsilon &= (1+\chi_e)\epsilon_0 & \mu &= (1+\chi_m)\mu_0
+\end{align*}
+\subsection{Boundary Conditions}
+\begin{align*}
+    \oint_S \mathbf{D} \cdot da &= Q_{f_{\text{enc}}}\\
+    \oint_S \mathbf{B} \cdot da &= 0\\
+    \oint_P \mathbf{E} \cdot dl &= -\frac{\partial}{\partial t} \int_S \mathbf{B} \cdot da\\
+    \oint_P \mathbf{H} \cdot dl &= I_{f_\text{enc}} + \frac{\partial}{\partial t} \int_S \mathbf{D} \cdot da
+\end{align*}
+such that if you consider a wafer-thin Gaussian pillbox on a surface charge and a very thin Amperian loop on a surface current,\\
+\begin{align*}
+    \mathbf{D}^\perp_1 - \mathbf{D}^\perp_2 &= \sigma_f\\
+    \mathbf{B}^\perp_1 - \mathbf{B}^\perp_2 &= 0\\
+    \mathbf{E}^\parallel_1 - \mathbf{E}^\parallel_2 &= 0\\
+    \mathbf{H}^\parallel_1 - \mathbf{H}^\parallel_2 &= \mathbf{K}_f \times \hat{n}
+\end{align*}
+which can be reduced to simple equations of $E$ and $B$ in linear media.\\
+\raggedcolumns\newcolumn
+\hrulefill\\
+
+
+
+
+
+
+\raggedcolumns\newcolumn
+.
 \end{multicols}
 \end{document}

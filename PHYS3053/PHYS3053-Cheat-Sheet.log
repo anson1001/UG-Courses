@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.30)  13 DEC 2025 13:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.30)  14 DEC 2025 12:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,7 +670,7 @@ LaTeX Font Info:    Font shape `T1/calligra/m/n' will be
 {C:/Users/anson/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 [2]
-<c6f0bfe1cc47561d22c590c44de282d.jpg, id=142, 522.95375pt x 425.59pt>
+<c6f0bfe1cc47561d22c590c44de282d.jpg, id=150, 522.95375pt x 425.59pt>
 File: c6f0bfe1cc47561d22c590c44de282d.jpg Graphic file (type jpg)
 <use c6f0bfe1cc47561d22c590c44de282d.jpg>
 Package pdftex.def Info: c6f0bfe1cc47561d22c590c44de282d.jpg  used on input line 283.
@@ -682,26 +682,28 @@ Overfull \hbox (2.7256pt too wide) in paragraph at lines 283--285
 
 
 
-[3 <./c6f0bfe1cc47561d22c590c44de282d.jpg>] (PHYS3053-Cheat-Sheet.aux)
+[3 <./c6f0bfe1cc47561d22c590c44de282d.jpg>]
+
+[4] (PHYS3053-Cheat-Sheet.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
  ***********
 Package rerunfilecheck Info: File `PHYS3053-Cheat-Sheet.out' has not changed.
-(rerunfilecheck)             Checksum: 28CF27902EBF0167A1E9475BC942017C;4431.
+(rerunfilecheck)             Checksum: B47048F3506973BE8754FECCF5B0C4A5;4797.
  ) 
 Here is how much of TeX's memory you used:
- 22081 strings out of 469923
- 414286 string characters out of 5469170
- 804528 words of memory out of 5000000
- 48489 multiletter control sequences out of 15000+600000
+ 22086 strings out of 469923
+ 414340 string characters out of 5469170
+ 804531 words of memory out of 5000000
+ 48491 multiletter control sequences out of 15000+600000
  635165 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,107p,601b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,107p,601b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\anson\AppData\Local\MiKTeX\fonts/pk/ljfour/public/calligra/dpi704\callig15.pk><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on PHYS3053-Cheat-Sheet.pdf (3 pages, 228388 bytes).
+Output written on PHYS3053-Cheat-Sheet.pdf (4 pages, 234789 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 
