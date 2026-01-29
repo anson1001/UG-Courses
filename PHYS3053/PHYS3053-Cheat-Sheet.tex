@@ -11,6 +11,11 @@
 \DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
 \DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
 \newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{mathrsfs}
+\usepackage{float}
+\usepackage{wrapfig}
 
 
 
@@ -58,7 +63,7 @@
 
 \section{5.1 The Lorentz Force Law}
 Empirically, for a moving charge in a magnetic field, we have 
-$$F_{mag} = Q(v \times B)$$
+$$F_{mag} = q(v \times B)$$
 The generalized magnetic force is
 $$F_{mag} = \int I\times B dl = I \int dl \times B$$
 The magnetic force does \emph{NO} work.
@@ -76,7 +81,7 @@ Volume Current Density: $J = \rho v,$ $J = \frac{dI}{da_\perp}$\\
 
 \section{5.2 Biot-Savart Law}
 For $\frac{\partial J}{\partial t} = 0$, we have,
-$$B = \frac{\mu_0}{4 \pi} I \int \frac{dl' \times \hat{\scripty{r}}}{\scripty{r}^2} = \frac{\mu_0}{4\pi} \int \frac{J(r')\times B}{\scripty{r}^2}d\tau'$$\\
+$$B = \frac{\mu_0}{4 \pi} I \int \frac{dl' \times \hat{\scripty{r}}}{\scripty{r}^2} = \frac{\mu_0}{4\pi} \int \frac{J(r')\times \hat{\scripty{r}}}{\scripty{r}^2}d\tau'$$\\
 Field of a straight wire: $B = \frac{\mu_0 I}{2\pi d}$\\
 Field of a circular wire: $B = \frac{\mu_0 I}{2} \frac{R^2}{(R^2+z^2)^{3/2}}$
 
@@ -116,7 +121,7 @@ $$B = \nabla \times A$$
     \nabla \times B = \nabla \times ( \nabla \times A) = \nabla (\nabla \cdot A) - \nabla^2A &= \mu_0 \vec{J}\\
     \text{(3 Poisson's equations corres. x,y,z) \quad} \nabla^2 A &= \mu_0 \vec{J}
 \end{align*}
-$$A(r) = \frac{\mu_0}{4\pi}\int\frac{J}{\scripty{r}^2}d\tau' = \frac{\mu_0}{4\pi}\int\frac{K}{\scripty{r}^2}da' = \frac{\mu_0}{4\pi}\int\frac{I}{\scripty{r}^2}dl'$$
+$$A(r) = \frac{\mu_0}{4\pi}\int\frac{J}{\scripty{r}}d\tau' = \frac{\mu_0}{4\pi}\int\frac{K}{\scripty{r}}da' = \frac{\mu_0}{4\pi}\int\frac{I}{\scripty{r}}dl'$$
 By using $B = \nabla \times A$, Ampere's law can also be applied on $A$,
 $$\oint A \cdot dl = \Phi = \int B\cdot da$$
 Typically, the direction of A mimics that of currents.\\
@@ -139,6 +144,7 @@ B_{dip}(r) &= \frac{\mu_0}{4\pi} \frac{3(\mathbf{m} \cdot r) \hat{r} - \mathbf{m
 where $\mathbf{m}$ is the magnetic moment
 $$ \mathbf{m} = I \int da = Ia $$
 
+
 \raggedcolumns\columnbreak
 .
 \end{multicols}
@@ -154,8 +160,218 @@ $$ \mathbf{m} = I \int da = Ia $$
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
+\section{6.1 Magnetization}
+Torque on magnetic dipole
+$$N = m \times B$$
+Force on magnetic dipole (due to non-uniform magnetic field)
+$$F = \nabla (m \cdot B)$$
+\subsection{Magnetization}
+Magnetization $\mathbf{M}$ is the Magnetic Dipole Per Unit Volume
+$$\mathbf{M} = \frac{d\mathbf{m}}{dV}$$
+\section{6.2 The Field of A Magnetized Object}
+\subsection{Bound Currents}
+The vector potential $A$ can be written as
+$$A = \frac{\mu_0}{4\pi}\int \frac{1}{\scripty{r}}[\nabla' \times \mathbf{M}(r')]d\tau' + \frac{\mu_0}{4\pi}\oint \frac{1}{\scripty{r}}[\mathbf{M} \times  da']$$
+being the sum of volume integral on \textbf{bound volume currents} $J_b$
+$$J_b = \nabla \times \mathbf{M}$$
+and surface integral on \textbf{bound surface currents} $K_b$
+$$K_b = \mathbf{M} \times \hat{n}$$
+\section{6.3 The Auxiliary Field H}
+Because B is theoretically composed of two currents (which only $J_f$ is measurable), we can write
+\begin{align*}
+    J &= J_b + J_f\\
+    \frac{1}{\mu_0}(\nabla \times B) &= \mathbf{M} + \nabla \times J_f
+\end{align*}
+such that we can define the H field
+\begin{align*}
+    H &= \frac{1}{\mu_0}B - M\\
+    \nabla \times H &= J_f\\
+    \oint H \cdot dl &= I_{f_{enc}} \quad \textbf{(see below)}
+\end{align*}
+This equation tells you $H$ only when symmetry is present.\\
+So don't read too much out of H's correspondence with B.\\
+\subsection{Boundary Conditions}
+\begin{align*}
+    H_{above}^\perp - H_{below}^\perp &= -(M_{above}^\perp - M_{below}^\perp)\\
+    H_{above}^\parallel - H_{below}^\parallel &= K_f \times \hat{n} \quad\quad (\text{by } \nabla \times H = J_f)\\
+\end{align*}
+\section{6.4 Linear and Nonlinear Media}
+The \textbf{magnetic susceptibility} $\chi_m$ for linear media is such that
+$$M = \chi_m H$$
+which differs from $P = \epsilon_0 \chi_e E$.\\
+Then we have
+$$B = \mu H = mu_0(1+\chi_m)H$$
+and
+$$J_b = \chi_m J_f$$\\
+\raggedcolumns\columnbreak
+.\\
+\raggedcolumns\columnbreak
+.
+\end{multicols}
+\pagebreak
 
+\begin{center}
+     \Large{\textbf{Chapter 7}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
 
+\section{7.1 Electromotive Force}
+\subsection{Ohm's Law}
+Empirically, we have
+$$J = \sigma f$$
+where $\sigma$ is the \textbf{conductivity} ($\sigma = \frac{1}{\rho}$ where $\rho$ is the \textbf{resistivity}) and $f$ is the force per unit charge such that
+$$J = \sigma E_{\text{net}}$$
+and because $J$ and $I$ are proportional by an area, and $E$ and $V$ are proportional by a length, we have
+$$V = IR$$
+and
+$$R = \frac{\rho l}{A} = \frac{l}{\sigma A}$$
+For steady currents (i.e. $\nabla \cdot J = 0$), we have,
+$$\nabla \cdot E = \frac{1}{\sigma} \nabla \cdot J = 0$$
+such that Laplace's equation can be applied.\\
+Charges lie on the surface of the conductor and the electric field is uniform inside the conductor. (proven)\\
+We also have,
+$$P = \frac{dW}{dq} \frac{dq}{dt} = VI$$
+\subsection{Electromotive Force}
+Anywhere in the circuit, there are two forces acting, \textbf{the source force} ($f_s$) and \textbf{the electrostatic force} ($E$) (the smoothing force), such that the net force per unit charge is
+$$f_\text{net} = f_s + E$$
+and the source force $f_s$ is only present in the battery, and the smoothing force is the self-correcting force that maintains a steady current in all conductors (it is a natural and intrinsic process).\\
+We then define the \textbf{electromotive force} or \textbf{emf} ($\mathcal{E}$) by 
+$$\mathcal{E} = \oint f \cdot dl = \oint f_s \cdot dl$$ 
+because $\oint E \cdot dl = 0$.\\ 
+Inside a perfect source, $\sigma = \infty$ such that to keep $J$ constant, $f$ has to be 0. Then we have,
+$$ E = -f_s$$
+such that
+$$ V = -\int_a^b E \cdot dl = \int_a^b f_s \cdot dl = \mathcal{E} $$
+($V$ is not defined by $f$ nor $f_s$ because E is the driving force outside the battery, and that is what we are concerned of.)
+\subsection{Motional emf}
+Motional emf is emf due to $f_s$ which is caused by the magnetic force.
+$$\mathcal{E} = \oint f_s \cdot dl = -\frac{d\Phi}{dt}$$\\
+\raggedcolumns\columnbreak
+
+\section{7.2 Electromagnetic Induction}
+\subsection{Faraday's Law}
+Apart from the motional emf which was induced by a magnetic (Lorentz) force, it was empirical that a changing magnetic field would induce an electric field that would act as the source $f_s$ such that the emf would \textbf{again} be equal to the rate of change of magnetic flux,
+\begin{align*}
+    \mathcal{E} = \oint f_s \cdot dl = \oint E \cdot dl &= -\frac{d\Phi}{dt}\\
+    (\text{Stoke's theorem})\int \nabla \times E \cdot da = \oint E \cdot dl &= -\int \frac{dB}{dt}\cdot da
+\end{align*}
+and we have the \textbf{Faraday's law}
+$$ \nabla \times E = - \frac{dB }{dt }$$
+(Note that this is not to be mistaken for the case when $\Phi$ changes motionally where the magnetic force is in play.
+It is by pure coincidence that these two formulation of $\mathcal{E}$ gives you the same result)
+\subsection{The Induced Electric Field}
+The divergence of $E$ is still 0.\\
+In case $\rho = 0$, we have a correspondence between $E$ and $B$:
+\begin{align*}
+    \nabla \cdot E = 0, \quad \nabla \times E &= -\frac{dB }{dt }\\
+    \nabla \cdot B = 0, \quad \nabla \times B &= \mu_0 J
+\end{align*}
+such that we can apply Ampere's law and the Biot-Savart law on E, formally,
+\begin{align*}
+        \oint E \cdot dl &= -\frac{d\Phi}{dt} \text{\quad (integral form of Faraday's law)}\\
+    E &= -\frac{1}{4\pi}\int \frac{\frac{dB }{dt } \times \hat{\scripty{r}}}{\scripty{r}} d\tau'
+\end{align*}
+take note that these laws are for magnetostatics only, but are approximately correct in the quasistatic regime when $\frac{dB }{dt }$ is small.
+\subsection{Inductance}
+Faraday's Law is concerned with the change in magnetic flux, and because a current gives a magnetic field, it would be natural to consider the flux due to a changing current.\\
+
+\begin{wrapfigure}{r}{0.1\textwidth}
+\frame{\includegraphics[width=75pt]{c6f0bfe1cc47561d22c590c44de282d.jpg}}
+\centering
+\end{wrapfigure}
+
+Consider two loops, using Biot-Savart Law, 
+$$\Phi_2 = M_{12} I_1$$
+with
+$$M_{12} = \frac{\mu_0}{4\pi} \oint \oint \frac{dl_1 \cdot dl_2}{\scripty{r}}$$
+as the \textbf{mutual inductance} $M$, which is\\
+\textbf{1)} purely geometrical, and\\ \textbf{2)} $M_{12} = M_{21}$\\
+\raggedcolumns\columnbreak
+The B field also induces a self emf (back emf) such that
+$$\Phi_1 = LI_1$$
+and
+$$\qquad \qquad \qquad \mathcal{E} = - L \frac{dI}{dt} \quad \text{(by Faraday's Law)}$$
+such that $L$ is the \textbf{self inductance}.
+\subsection{Energy in Magnetic Fields}
+Suppose you want to run a current in a wire, you have to run against the back emf that you produced when changing the magnitude of the current by Faraday's Law. This emf is only present during the build up process, not when the current is steady.
+Such that the power is,\\
+$$ \frac{dW}{dt} = -\mathcal{E}I = -LI\frac{dI}{dt}$$
+and the work done is\\ 
+$$ W = \int -LI\frac{dI}{dt}dt = \frac{1}{2}LI^2$$
+independent of how $I$ built up.
+This energy is NOT from 
+Also,
+$$W = \frac{I}{2}LI = \frac{I}{2}\Phi = \frac{1}{2}\int (A \cdot I) dl = \frac{1}{2}\int (A \cdot J) d\tau$$
+using $\nabla \times B = \mu_0 J$ and product rule 6,
+$$W = \frac{1}{2\mu_0}\int_{\text{all space}}B^2$$
+such that $\frac{B^2}{2\mu_0}$ is the \textbf{energy per unit volume} of magnetic field.
+
+\section{7.3 Maxwell's Equations}
+By far, the curl and divergence of $E$ and $B$ fields have been established.
+\begin{align*}
+    \nabla \cdot E &= \frac{\rho}{\epsilon_0} &\nabla \times E &= -\frac{dB}{dt}\\
+    \nabla \cdot B &= 0 &\nabla \times B &= \mu_0 J
+\end{align*}
+There is one ammendment on Ampere's law due to its failure for non-steady currents. This is to be fixed by the "piling charge" term, such that Ampere's law writes
+$$ \nabla \times B = \mu_0 J + \mu_0 \epsilon_0 \frac{dE}{dt}$$
+\subsection{Maxwell's Equations in Matter}
+Because E is due to $\rho_f and \rho_b$, once there is a change in polarization, it appears to have a current of bound charges, such that
+$$ \mathbf{J} = \mathbf{J}_f + \mathbf{J}_b + \mathbf{J}_p = \mathbf{J}_f + \nabla \times \mathbf{M} + \frac{\partial \mathbf{P}}{\partial t}$$
 \end{multicols}
 
+\newpage
+\begin{center}
+     \Large{\textbf{Chapter 7}} \\
+\end{center}
+\begin{multicols}{3}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+then Maxwell's equations will write
+\begin{align*}
+    \nabla \cdot \mathbf{D} &= \rho_f & \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\\
+    \nabla \cdot \mathbf{B} &= 0 & \nabla \times \mathbf{H} &= \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t}
+\end{align*}
+where
+\begin{align*}
+    \mathbf{D} &= \epsilon_0\mathbf{E} + \mathbf{P} & \mathbf{H} &= \frac{1}{\mu_0}\mathbf{B} - \mathbf{M}
+\end{align*}
+and in linear media
+\begin{align*}
+    \mathbf{P} &= \epsilon_0 \chi_e \mathbf{E} & \mathbf{M} &= \chi_m \mathbf{H}\\
+    \mathbf{D} &= \epsilon \mathbf{E} & \mathbf{H} &= \frac{1}{\mu} \mathbf{B}\\
+    \epsilon &= (1+\chi_e)\epsilon_0 & \mu &= (1+\chi_m)\mu_0
+\end{align*}
+\subsection{Boundary Conditions}
+\begin{align*}
+    \oint_S \mathbf{D} \cdot da &= Q_{f_{\text{enc}}}\\
+    \oint_S \mathbf{B} \cdot da &= 0\\
+    \oint_P \mathbf{E} \cdot dl &= -\frac{\partial}{\partial t} \int_S \mathbf{B} \cdot da\\
+    \oint_P \mathbf{H} \cdot dl &= I_{f_\text{enc}} + \frac{\partial}{\partial t} \int_S \mathbf{D} \cdot da
+\end{align*}
+such that if you consider a wafer-thin Gaussian pillbox on a surface charge and a very thin Amperian loop on a surface current,\\
+\begin{align*}
+    \mathbf{D}^\perp_1 - \mathbf{D}^\perp_2 &= \sigma_f\\
+    \mathbf{B}^\perp_1 - \mathbf{B}^\perp_2 &= 0\\
+    \mathbf{E}^\parallel_1 - \mathbf{E}^\parallel_2 &= 0\\
+    \mathbf{H}^\parallel_1 - \mathbf{H}^\parallel_2 &= \mathbf{K}_f \times \hat{n}
+\end{align*}
+which can be reduced to simple equations of $E$ and $B$ in linear media.\\
+\raggedcolumns\newcolumn
+\hrulefill\\
+
+
+
+
+
+
+\raggedcolumns\newcolumn
+.
+\end{multicols}
 \end{document}
