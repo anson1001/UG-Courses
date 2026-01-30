@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  30 JAN 2026 21:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  30 JAN 2026 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/Git 2026 VS Clone/UG-Courses/PHYS3053/PHYS3053-Cheat-Sheet.tex"
-(d:/Git 2026 VS Clone/UG-Courses/PHYS3053/PHYS3053-Cheat-Sheet.tex
+**"d:/Git 2026 VS Clone/UG-Courses/PHYS3053/PHYS3053 Cheat Sheet.tex"
+(d:/Git 2026 VS Clone/UG-Courses/PHYS3053/PHYS3053 Cheat Sheet.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
 (C:\Users\anson\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -559,8 +559,8 @@ Package: wrapfig 2003/01/31  v 3.6
 ) (C:\Users\anson\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count348
-) (PHYS3053-Cheat-Sheet.aux)
-\openout1 = `PHYS3053-Cheat-Sheet.aux'.
+) (PHYS3053 Cheat Sheet.aux)
+\openout1 = `"PHYS3053 Cheat Sheet.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
@@ -616,9 +616,9 @@ LaTeX Font Info:    ... okay on input line 50.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 50.
-(PHYS3053-Cheat-Sheet.out) (PHYS3053-Cheat-Sheet.out)
+(PHYS3053 Cheat Sheet.out) (PHYS3053 Cheat Sheet.out)
 \@outlinefile=\write4
-\openout4 = `PHYS3053-Cheat-Sheet.out'.
+\openout4 = `"PHYS3053 Cheat Sheet.out"'.
 
  (C:\Users\anson\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -670,24 +670,24 @@ Overfull \hbox (2.7256pt too wide) in paragraph at lines 283--285
  [][] 
  []
 
-[3 <./c6f0bfe1cc47561d22c590c44de282d.jpg>] [4] (PHYS3053-Cheat-Sheet.aux)
+[3 <./c6f0bfe1cc47561d22c590c44de282d.jpg>] [4] (PHYS3053 Cheat Sheet.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
-Package rerunfilecheck Info: File `PHYS3053-Cheat-Sheet.out' has not changed.
+Package rerunfilecheck Info: File `"PHYS3053 Cheat Sheet".out' has not changed.
 (rerunfilecheck)             Checksum: B47048F3506973BE8754FECCF5B0C4A5;4797.
  ) 
 Here is how much of TeX's memory you used:
- 22068 strings out of 467871
- 413681 string characters out of 5418376
- 843234 words of memory out of 5000000
- 50530 multiletter control sequences out of 15000+600000
+ 22070 strings out of 467871
+ 413761 string characters out of 5418376
+ 843238 words of memory out of 5000000
+ 50532 multiletter control sequences out of 15000+600000
  636061 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,107p,600b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\anson\AppData\Local\MiKTeX\fonts/pk/ljfour/public/calligra/dpi704\callig15.pk><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anson/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on PHYS3053-Cheat-Sheet.pdf (4 pages, 234789 bytes).
+Output written on "PHYS3053 Cheat Sheet.pdf" (4 pages, 234789 bytes).
 PDF statistics:
  232 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)
