@@ -1,0 +1,188 @@
+
+%% Possible commands
+
+%   Definition:     \defin
+%   Theorem:        \theo
+%   Example:        \ex
+%   Demonstration:  \demo
+
+
+%  If u want to create a reference for that command,
+%  write an 'r' at the end
+
+%%  Exemples of use: 
+
+% \defin, \theo and \ex have the same structure
+
+% \defin{Name or title of the definition}{
+%     A definition
+% }
+
+% \definr{Name or title of the definition}{Reference code}{
+%     A definition
+% }
+
+% To reference, u can write \ref{label:Reference code}
+
+% \demo has no title 
+
+% \demo{
+%   A demo.
+% }
+
+
+
+
+% The color of all the environments can be changed with this variable.
+% To do that, just search the code of the color in hexadecimal and 
+% change it at the end.
+
+\definecolor{doccol}{HTML}{ff2b2b}
+
+% Some nice colors I have tried :)
+%   Light Blue:   32dfd8
+%   Green:        32c12f
+%   Violet:       c233c4
+%   Red:          ff2b2b
+
+% If you want to modify only one thing, try to change the values of
+% colback, colframe, colbacktitle...
+
+
+
+% ============================
+% Definition
+% ============================
+\newtcbtheorem[auto counter]{mydefinition}{Definition}{
+    enhanced,
+    beforeafter skip = 0.6cm,
+    colback=doccol!10,
+    colframe= doccol!70!black!,
+    colbacktitle = doccol!40,
+    halign title = center,
+    titlerule=0.5mm,
+    toptitle = 0.8mm,
+    titlerule style=doccol!70!black,
+    coltitle = black,
+    fonttitle=\bfseries,
+    separator sign= \ -,
+    }{defin}
+
+\NewDocumentCommand{\defin}{m+m}{
+    \begin{mydefinition}{#1}{}
+        #2
+    \end{mydefinition}
+}
+
+\NewDocumentCommand{\definr}{mm+m}{
+    \begin{mydefinition}{#1}{#2}
+        #3
+    \end{mydefinition}
+}
+
+
+% ============================
+% Theorem
+% ============================
+
+ \newtcbtheorem[auto counter]{mytheorem}{Theorem}{
+ enhanced,
+ beforeafter skip = 0.6cm,
+ colback=white,
+ colframe= doccol!70!black!,
+ fonttitle=\bfseries,
+ coltitle = black,
+ attach boxed title to top center = {
+    yshift=-3mm,
+    yshifttext=-2mm
+    },
+ boxed title style = {
+    colback=doccol!20!, 
+    colframe = doccol!70!black!,
+    },
+ separator sign= \ -,
+ % Here, you can change the position of the image. Depending of which one
+ % you use, maybe you need to change the scale or rotation, i doubt 
+ % the position needs to be changed
+ overlay={
+    \node at ([xshift=\tcboxedtitlewidth/2 + 0.1cm ,
+    yshift = \tcboxedtitleheight/2 ]frame.north) 
+    {\includegraphics[scale = 0.035]{Figures/umaru.png}};
+    }
+}{theo}
+
+\NewDocumentCommand{\theo}{m+m}{
+    \begin{mytheorem}{#1}{}
+        #2
+    \end{mytheorem}
+}
+
+\NewDocumentCommand{\theor}{mm+m}{
+    \begin{mytheorem}{#1}{#2}
+        #3
+    \end{mytheorem}
+}
+
+% ============================
+% Example
+% ============================
+
+\newtcbtheorem[auto counter]{myexample}{Example}{
+    enhanced,
+    beforeafter skip = 0.6cm,
+    detach title, before upper={\tcbtitle\textbf{.}\quad},
+    colback=doccol!10,
+    frame hidden,
+    after skip=10pt,
+    borderline west={1mm}{0pt}{doccol!70!black!},
+    coltitle = black,
+    fonttitle=\bfseries,
+    separator sign= \ -,
+    }{ex}
+
+\NewDocumentCommand{\ex}{m+m}{
+    \begin{myexample}{#1}{}
+        #2
+    \end{myexample}  
+}
+
+\NewDocumentCommand{\exr}{mm+m}{
+    \begin{myexample}{#1}{#2}
+        #3
+    \end{myexample}  
+}
+
+
+
+% ============================
+% Demonstration
+% ============================
+
+\newenvironment{dem}{
+    \vspace{-2pt}
+    {\noindent{\it \textbf{Demonstration.}}}
+    \tcolorbox[
+        blanker,
+        breakable,
+        left = 5mm,
+        parbox = false,
+        before upper = {\parindent15pt},
+        after skip = 15pt,
+	borderline west={1mm}{0pt}{doccol!80!black!}]
+}{
+    \textcolor{doccol!40!white}{\hbox{}\nobreak\hfill$\blacksquare$} 
+    \endtcolorbox
+}
+
+\NewDocumentCommand{\demo}{m}{
+    \begin{dem}
+        #1
+    \end{dem}
+}
+
+
+
+
+
+
+
