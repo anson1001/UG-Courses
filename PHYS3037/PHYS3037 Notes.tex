@@ -49,18 +49,72 @@ Anson\\
 
 \section{The Wave Function}
 \subsection{The Schr\"odinger Equation}
+In classical mechanics, we are interested in the position and momentum of a particle at any given time, with its time evolution goverened by Newton's laws.
+In quantum mechanics, we obtain the \textbf{wave function} $\psi(x,t)$ which gives these informations, and its time evolution is governed by the \textbf{Schr\"odinger equation}.
 \definr{Time-Dependent Schr\"odinger Equation}{TDSE}{
     The \textbf{time-dependent Schr\"odinger equation} (TDSE) is given by
     \[
         i \hbar \frac{\partial}{\partial t} \Psi(x,t) = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \Psi(x,t) + V(x,t) \Psi(x,t)
     \]
-    where $\Psi(x,t)$ is the wave function, $V(x,t)$ is the potential energy, $m$ is the mass of the particle, and $\hbar$ is the reduced Planck's constant.
+    where $\Psi(x,t)$ is the wave function, $V(x,t)$ is the potential energy, $m$ is the mass of the particle, and $\hbar = 1.054573 \times 10^{-34}$ is the reduced Planck's constant.
 }
-The Schr\"odinger equation is analogous to Newton's second law, both describes how the quantum state of a physical system changes over time.
 \defin{Wave Function}{
-    The \textbf{wave function} $\Psi(x,t)$ is a complex-valued function that contains all the information about a quantum system. The square of its absolute value, $|\Psi(x,t)|^2$, gives the probability density of finding a particle at position $x$ at time $t$.
+    The \textbf{wave function} $\Psi(x,t)$ is a complex-valued function that contains all the information about a quantum system.
 }
 \subsection{The Statistical Interpretation}
+\defin{Born's Statistical Interpretation}{
+  Born's statistical interpretation of the wave function states that the probability density of finding a particle at position $x$ at time $t$ is given by $|\Psi(x,t)|^2$.
+}
+In case I do measure the position of the particle, the wave function will collapse to a delta function at the measured position, and the probability of finding the particle at that position is 1. After the measurement, the wave function will evolve according to the Schr\"odinger equation again, and the wave function will spread out again, and the probability of finding the particle at that position will be less than 1.
+\subsection{Probability}
+Here we define some useful concepts related to probability in quantum mechanics.
+\begin{itemize}
+    \item \textbf{Probability Density}: The probability density of finding a particle at position $x$ is given by $\rho(x)$.
+    \item \textbf{Expectation Value}: The expectation value of a function $f(x)$ is given by $$\langle f(x) \rangle = \int_{-\infty}^{\infty} f(x) \rho(x) dx$$
+    Note that the expectation value is the average of measurements on an ensemble of identically prepared systems, not the average of repeated measurements on one and the same system.
+    \item \textbf{Variance}: The variance of a function $f(x)$ is given by $$\sigma^2 = \langle f(x)^2 \rangle - \langle f(x) \rangle^2$$
+\end{itemize}
+\subsection{Normalization}
+\defin{Normalization}{
+    A wave function $\Psi(x,t)$ is said to be \textbf{normalized} if it satisfies the condition
+    \[
+        \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1
+    \]
+}
+Real particles can only be squared-integrable, which means that the integral of the probability density over all space must not be 0 or diverge.
+Thus, for we are only interested in real particles, we can obtain its normalized wave function. Moreover, it can be derived that the normalization condition is preserved by the Schr\"odinger equation.
+\subsection{Momentum}
+Now we know the expectation value of the position:
+$$\langle x \rangle = \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx$$
+Let's use a naive approach and assumme $\langle p \rangle = m \frac{d}{dt} \langle x \rangle$. We can derive that
+\begin{align*}
+    \langle p \rangle &= m \frac{d}{dt} \langle x \rangle \\
+    &= m \frac{d}{dt} \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx \\
+    &= m \int_{-\infty}^{\infty} x \frac{\partial}{\partial t} |\Psi(x,t)|^2 dx \\
+    &= m \int_{-\infty}^{\infty} x \left( \Psi^* \frac{\partial \Psi}{\partial t} + \Psi \frac{\partial \Psi^*}{\partial t} \right) dx\\
+    &= m \int_{-\infty}^{\infty} x \left( \Psi^* \frac{1}{i \hbar} \left( -\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} + V \Psi \right) + \Psi \frac{-1}{i \hbar} \left( -\frac{\hbar^2}{2m} \frac{\partial^2 \Psi^*}{\partial x^2} + V \Psi^* \right) \right) dx\\
+    &= \frac{\hbar}{2i} \int_{-\infty}^{\infty} x \left( \Psi^* \frac{\partial^2 \Psi}{\partial x^2} - \Psi \frac{\partial^2 \Psi^*}{\partial x^2} \right) dx\\
+    &= \frac{\hbar}{2i} \int_{-\infty}^{\infty} x \frac{\partial}{\partial x}\left( \Psi^* \frac{\partial \Psi}{\partial x} - \Psi \frac{\partial \Psi^*}{\partial x} \right) dx\\
+    &= \frac{\hbar}{2i} \left[ \left. x \left( \Psi^* \frac{\partial \Psi}{\partial x} - \Psi \frac{\partial \Psi^*}{\partial x} \right) \right|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \left( \Psi^* \frac{\partial \Psi}{\partial x} - \Psi \frac{\partial \Psi^*}{\partial x} \right) dx \right] \\
+    &= \int_{- \infty}^{\infty} \Psi^* \left( -i\hbar \frac{\partial}{\partial x} \right) \Psi dx
+\end{align*}
+\textbf{Note} Here we use the conjugation of \nameref{defin:TDSE}, adding a minus sign to the time derivative of the wave function, and we also used integration by parts in the last step.
+
+We call the operator $-i\hbar \frac{\partial}{\partial x}$ the \textbf{momentum operator}, the momentum operator in three dimensions is $\hat{p} = -i\hbar \nabla$.
+
+To find the operator for classically defined variables, such as kinetic energy and angular momentum, we just use the formulas $T = \frac{p^2}{2m}$ and $\bf{L} = \bf{r} \times \bf{p}$, and substitute $p$ for $\hat{p} = -i \hbar \nabla$, getting
+\begin{align*}
+  \hat{T} &= -\frac{\hbar^2}{2m} \nabla^2\\
+  \hat{\bf{L}} &= -i \hbar \bf{r} \times \nabla
+\end{align*}
+\subsection{The Uncertainty Principle}
+Heisenberg's uncertainty principle states that the product of the uncertainties in position and momentum is greater than or equal to $\frac{\hbar}{2}$, which will be derived later.
+For now, just have an intuitive understanding of it: the more precisely we know the position of a particle, the less precisely we can know its momentum, and vice versa. This is not a limitation of our measurement devices, but a fundamental property of nature.
+For a wave, you precisely know its wavelength, but you have no idea where the wave is. For a particle, you precisely know its position, but you have no idea what its wavelength is. 
+
+\pagebreak
+
+\section{The Time-Independent Schr\"odinger Equation}
 
 
 
