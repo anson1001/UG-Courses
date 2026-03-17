@@ -75,13 +75,17 @@ Here we define some useful concepts related to probability in quantum mechanics.
     \item \textbf{Variance}: The variance of a function $f(x)$ is given by $$\sigma^2 = \langle f(x)^2 \rangle - \langle f(x) \rangle^2$$
 \end{itemize}
 \subsection{Normalization}
-\defin{Normalization}{
-    A wave function $\Psi(x,t)$ is said to be \textbf{normalized} if it satisfies the condition
+\defin{Normalizable / Squared-Integrable}{
+    A wave function $\Psi(x,t)$ is said to be \textbf{normalizable} (or \textbf{square-integrable} if it satisfies the condition
     \[
-        \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1
+        \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx < \infty
     \]
 }
-Real particles can only be squared-integrable, which means that the integral of the probability density over all space must not be 0 or diverge.
+Real particles can only be squared-integrable and thus normalizable.\\
+\demo{
+    We can normalize a squared-integrable wave function by dividing it by the square root of its norm, which is given by
+    $$\psi_{norm}(x,t) = \frac{\psi(x,t)}{\sqrt{\int_{-\infty}^{\infty} |\psi(x,t)|^2 dx}}$$
+}
 Thus, for we are only interested in real particles, we can obtain its normalized wave function. Moreover, it can be derived that the normalization condition is preserved by the Schr\"odinger equation.
 \subsection{Momentum}
 Now we know the expectation value of the position:
@@ -98,7 +102,7 @@ Let's use a naive approach and assumme $\langle p \rangle = m \frac{d}{dt} \lang
     &= \frac{\hbar}{2i} \left[ \left. x \left( \Psi^* \frac{\partial \Psi}{\partial x} - \Psi \frac{\partial \Psi^*}{\partial x} \right) \right|_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \left( \Psi^* \frac{\partial \Psi}{\partial x} - \Psi \frac{\partial \Psi^*}{\partial x} \right) dx \right] \\
     &= \int_{- \infty}^{\infty} \Psi^* \left( -i\hbar \frac{\partial}{\partial x} \right) \Psi dx
 \end{align*}
-\textbf{Note} Here we use the conjugation of \nameref{defin:TDSE}, adding a minus sign to the time derivative of the wave function, and we also used integration by parts in the last step.
+\textbf{Note} Here we used the conjugation of \nameref{defin:TDSE}, adding a minus sign to the time derivative of the wave function, and we also used integration by parts in the last step.
 
 We call the operator $-i\hbar \frac{\partial}{\partial x}$ the \textbf{momentum operator}, the momentum operator in three dimensions is $\hat{p} = -i\hbar \nabla$.
 
@@ -115,7 +119,81 @@ For a wave, you precisely know its wavelength, but you have no idea where the wa
 \pagebreak
 
 \section{The Time-Independent Schr\"odinger Equation}
+\pagebreak
 
+\section{Formalism}
+\subsection{Hilbert Space}
+Quantum theory is formulated on linear algebra, and we have the following correspondence:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c}
+        \textbf{Linear Algebra} & \textbf{Quantum Mechanics} \\
+        \hline
+        Vector & State Function \\
+        Linear Operator & Observable \\
+        Inner Product & Probability Amplitude \\
+    \end{tabular}
+\end{table}
+
+All square-integrable, infinite-dimensional wave functions form a vector space. 
+This vector space is called a \textbf{Hilbert space}, and it is a complete infinite-dimensional vector space equipped with a convergent inner product.
+
+\defin{Hilbert Space}{
+A complete infinite-dimensional vector space $L^2(a,b)$ equipped with a convergent inner product.
+}
+\defin{Inner Product}{
+    The inner product is given by
+    $$ \langle \psi | \phi \rangle = \int_{-\infty}^{\infty} \psi^*(x) \phi(x) dx $$
+    \textbf{Properties of the Inner Product}
+    \begin{itemize}
+        \item Conjugate Symmetry: $\langle \psi | \phi \rangle = \langle \phi | \psi \rangle^*$
+        \item Positive Definiteness: $\langle \psi | \psi \rangle \geq 0$ and $\langle \psi | \psi \rangle = 0$ if and only if $\psi = 0$
+        \item Orthogonality: if $\langle \psi | \phi \rangle = 0$ then $\psi$ and $\phi$ are orthogonal
+    \end{itemize}
+}
+\defin{Complete Set}{
+    A set of functions $\{f_n(x)\}$ is said to be complete if,  $\forall \, f(x)$, we have
+    $$ f(x) = \sum_{n=1}^{\infty} c_n f_n(x) $$
+    where $c_n = \langle f_n | f \rangle$.
+}
+\ex{}{
+    The set of eigenfunctions of the Hamiltonian operator (i.e. stationary states) forms a complete set.
+}
+
+\subsection{Observables}
+\defin{Expectation Value of an Observable}{
+    The expectation value of an observable $Q$ is given by
+    $$ \langle Q \rangle = \langle \psi | \hat{Q} \psi \rangle $$
+    \textbf{Properties}
+    \begin{itemize}
+        \item Observed values must be real, so $\langle Q \rangle = \langle Q \rangle^*$
+        \item (following from the previous property) $\langle \psi | Q \psi \rangle = \langle Q \psi | \psi \rangle^*$
+    \end{itemize}
+}
+\subsubsection{Hermitian Operators}
+\defin{Hermitian Operator}{
+    An operator $\hat{Q}$ is said to be Hermitian if
+    $$ \langle \psi | \hat{Q} \phi \rangle = \langle \hat{Q} \psi | \phi \rangle $$
+    for all $\psi$ and $\phi$ in the Hilbert space.
+}
+\ex{}{Observables are always hermitian.}
+\defin{Hermitian Conjugate}{
+    The Hermitian conjugate of an operator $\hat{Q}$ is denoted by $\hat{Q}^\dagger$ such that
+    $$ \langle \psi | \hat{Q} \phi \rangle = \langle \hat{Q}^\dagger \psi | \phi \rangle $$
+    \textbf{Properties}
+    \begin{itemize}
+        \item For hermitian operators, $\hat{Q} = \hat{Q}^\dagger$
+        \item $(\hat{Q}^\dagger)^\dagger = \hat{Q}$
+    \end{itemize}
+}
+\subsubsection{Determinate States}
+Determinate states are states that return the same value when measured, i.e. $\sigma = 0$, wich is equivalent to
+$$ \hat{Q} \psi = q \psi $$
+for some $q$.
+\defin{Determinate State}{
+    A state $\psi$ is said to be a determinate state of an observable $Q$ if $\psi$ is an eigenstate of the operator $\hat{Q}$, i.e. $\hat{Q} \psi = q \psi$ where $q$ is the eigenvalue.
+}
 
 
 \end{document}
